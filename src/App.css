@@ -20,3 +20,13 @@
 .App-link {
   color: #09d3ac;
 }
+
+.Cell{
+  border: solid 1px black;
+  height: 50px;
+  width: 50px;
+}
+
+.Cell-lit{
+  background: lime;
+}
