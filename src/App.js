@@ -44,6 +44,9 @@ class Board extends React.Component{
   }
 
   flipCellsAround(coord){
+
+    console.log("flipping" + (coord))
+
     let {ncols, nrows, } = this.props;
     let board = this.state.board;
     let [y , x] = coord.split("-").map(Number);
@@ -53,6 +56,13 @@ class Board extends React.Component{
         board[y][x] = !board[y][x];
       }
     }
+
+
+    flipCell(y,x)
+
+    this.setState({
+      board
+    })
 
   }
 
@@ -75,7 +85,7 @@ class Board extends React.Component{
       let row = [];
       for(let x = 0; x < this.props.ncols; x++){
         let coord = `${y}-${x}`
-        row.push(<Cell key = {coord} isLit = {this.state.board[y][x]} />)
+        row.push(<Cell flipCellsAroundMe = {()=> this.flipCellsAround(coord)} key = {coord} isLit = {this.state.board[y][x]} />)
       }
       tblBoard.push(<tr key={y}>{row}</tr>)
     }
