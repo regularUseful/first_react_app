@@ -58,15 +58,23 @@ class Board extends React.Component{
     }
 
 
-    flipCell(y,x)
+    flipCell(y,x);
+    flipCell(y, x + 1);
+    flipCell(y, x - 1);
+    flipCell(y + 1, x);
+    flipCell(y - 1, x);
+
+    let hasWon = board.every(row => row.every(cell=> !cell));
 
     this.setState({
-      board
+      board, hasWon
     })
 
   }
 
   createBoard(){
+
+
     let board = [];
     for(let y = 0; y < this.props.nrows; y++){
       let row = [];
@@ -80,6 +88,10 @@ class Board extends React.Component{
 
   render(){
 
+
+    if(this.state.hasWon){
+      return("You Win!");
+    }
     let tblBoard = [];
     for(let y = 0; y < this.props.nrows; y++){
       let row = [];
