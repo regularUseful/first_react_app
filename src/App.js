@@ -90,7 +90,9 @@ class Board extends React.Component{
 
 
     if(this.state.hasWon){
-      return("You Win!");
+      return(<div className = "title-div">
+        <h2 className="neon">You</h2><h2 className="flux">Win</h2>
+      </div>);
     }
     let tblBoard = [];
     for(let y = 0; y < this.props.nrows; y++){
@@ -102,11 +104,18 @@ class Board extends React.Component{
       tblBoard.push(<tr key={y}>{row}</tr>)
     }
     return(
-      <table className = "Board">
-        <tbody>
-          {tblBoard}
-        </tbody>
-      </table>
+      <div className="board-flex">
+        <div className="title-div">
+          <h2 className = "neon">Lights</h2>
+          <h2 className = "flux">Out</h2>
+        </div>
+        <table className = "Board">
+          <tbody>
+            {tblBoard}
+          </tbody>
+        </table>
+      </div>
+
     )
   }
 

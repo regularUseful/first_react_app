@@ -2,31 +2,35 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.Board{
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2{
+  margin: 0;
+
+}
+
+.title-div{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #09d3ac;
-}
 
 .Cell{
-  border: solid 1px black;
+  background: #444;
   height: 50px;
   width: 50px;
 }
 
 .Cell-lit{
   background: lime;
+}
+
+.board-flex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
